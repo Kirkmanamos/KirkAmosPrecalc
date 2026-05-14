@@ -1,0 +1,14 @@
+{
+  "name": "kirk-amos-precalc",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /KirkAmosPrecalc/",
+    "preview": "slidev build && npx -y serve dist"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.15.2",
+    "@slidev/theme-default": "^0.25.0"
+  }
+}

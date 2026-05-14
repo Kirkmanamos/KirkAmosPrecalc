@@ -1,0 +1,228 @@
+/* ============================================================
+   KirkAmos Precalc — Global Design System
+   
+   Philosophy: Content-first. The math is the star.
+   Clean, restrained UI that stays out of the way.
+   Easy to modify — all values flow from CSS custom properties.
+   ============================================================ */
+
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  /* Background layers */
+  --bg-base: #0d1117;
+  --bg-surface: #161b22;
+  --bg-raised: #1c2129;
+  --bg-overlay: #21262d;
+
+  /* Borders */
+  --border-default: #30363d;
+  --border-subtle: rgba(139, 148, 158, 0.12);
+
+  /* Text */
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #484f58;
+
+  /* Interactive accent */
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --accent-subtle: rgba(88, 166, 255, 0.15);
+
+  /* Math visualization colors */
+  --color-sin: #79c0ff;
+  --color-cos: #d29922;
+  --color-tan: #56d364;
+  --color-point: #f0f6fc;
+  --color-axis: rgba(139, 148, 158, 0.3);
+  --color-grid: rgba(139, 148, 158, 0.07);
+  --color-circle: rgba(139, 148, 158, 0.25);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+}
+
+/* --- Base Overrides for Slidev --- */
+.slidev-layout {
+  background: var(--bg-base) !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-sans) !important;
+}
+
+.slidev-page {
+  background: var(--bg-base) !important;
+}
+
+/* Remove default Slidev padding for full-bleed interactives */
+.slidev-layout.full {
+  padding: 0 !important;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+p, li {
+  font-family: var(--font-sans);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-surface);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+}
+
+/* --- Custom Range Slider --- */
+input[type="range"].angle-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-overlay);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].angle-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-base);
+  cursor: grab;
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+input[type="range"].angle-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 4px var(--accent-subtle);
+}
+
+input[type="range"].angle-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+}
+
+input[type="range"].angle-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg-base);
+  cursor: grab;
+}
+
+/* --- Card / Panel --- */
+.panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.panel-raised {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+/* --- Canvas Container --- */
+.canvas-container {
+  background: var(--bg-base);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+/* --- Discovery Prompt --- */
+.discovery-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--accent);
+}
+
+.discovery-card .question {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.discovery-card .hint {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Utility --- */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.text-sin {
+  color: var(--color-sin);
+}
+
+.text-cos {
+  color: var(--color-cos);
+}
+
+.text-tan {
+  color: var(--color-tan);
+}
+
+/* --- Slide Transitions --- */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}

@@ -1,0 +1,158 @@
+---
+theme: default
+title: 'The Unit Circle & Trigonometric Functions'
+info: |
+  An interactive, discovery-based exploration of how the unit circle
+  gives rise to the sine and cosine functions.
+  
+  Part of the KirkAmos Precalculus course.
+drawings:
+  persist: false
+transition: slide-left
+htmlAttrs:
+  class: dark
+---
+
+# The Unit Circle
+
+## Where do sine and cosine *really* come from?
+
+<div style="margin-top: 2rem; color: var(--text-secondary, #8b949e); font-size: 1rem;">
+Use ← → arrow keys to navigate
+</div>
+
+---
+
+# Starting with a Circle
+
+Consider a circle centered at the origin with **radius = 1**.
+
+This is the **unit circle** — and it's the key to understanding trigonometry.
+
+<div style="margin-top: 1.5rem;">
+
+- Every point on the circle is exactly **1 unit** from the center
+- An angle **θ** is measured from the positive x-axis
+- The point where the terminal side meets the circle has coordinates **(x, y)**
+
+</div>
+
+<DiscoveryPrompt
+  question="If the radius is 1, what must be true about x² + y² for every point on the circle?"
+  hint="By the Pythagorean theorem: x² + y² = r² = 1² = 1. This identity is the foundation of everything that follows."
+/>
+
+---
+
+# Defining Sine and Cosine
+
+For any angle **θ**, the point on the unit circle is:
+
+<div style="text-align: center; font-size: 1.5rem; margin: 1.5rem 0; font-family: var(--font-mono);">
+  ( <span style="color: var(--color-cos)">cos θ</span> , <span style="color: var(--color-sin)">sin θ</span> )
+</div>
+
+<div style="margin: 1rem 0; line-height: 2;">
+
+- <span style="color: var(--color-cos)">**cos θ**</span> = the **x-coordinate** (horizontal distance)
+- <span style="color: var(--color-sin)">**sin θ**</span> = the **y-coordinate** (vertical distance)
+
+</div>
+
+<DiscoveryPrompt
+  question="Using the identity x² + y² = 1 and these definitions, what identity relates sin and cos?"
+  hint="Substituting: cos²θ + sin²θ = 1. This is the Pythagorean Identity — it's true for every angle."
+/>
+
+---
+layout: full
+---
+
+<UnitCircleTrig />
+
+---
+
+# What Did You Discover?
+
+<div style="margin: 1rem 0;">
+
+As θ increases from 0° to 360°, the **height** of the point on the circle — that is, **sin θ** — traces out a smooth wave.
+
+</div>
+
+<DiscoveryPrompt
+  question="At what angles does sin θ reach its maximum? Its minimum? Where is it zero?"
+  hint="Maximum at 90° (sin 90° = 1). Minimum at 270° (sin 270° = −1). Zero at 0°, 180°, and 360°."
+/>
+
+<div style="margin-top: 1.5rem;">
+
+<DiscoveryPrompt
+  question="How would the graph change if you toggled on cos θ? How does it relate to the sine wave?"
+  hint="The cosine wave has the same shape but is shifted 90° to the left — it 'leads' the sine wave. Go back to the interactive and try it!"
+/>
+
+</div>
+
+---
+
+# The Sine Function
+
+The pattern you just traced is the **sine function**:
+
+<div style="text-align: center; font-size: 1.4rem; margin: 1.5rem 0; font-family: var(--font-mono);">
+  f(θ) = <span style="color: var(--color-sin)">sin θ</span>
+</div>
+
+| Property | Value |
+|:---|:---|
+| **Domain** | All real numbers |
+| **Range** | [−1, 1] |
+| **Period** | 360° = 2π |
+| **Maximum** | sin 90° = 1 |
+| **Minimum** | sin 270° = −1 |
+| **Zeros** | 0°, 180°, 360°, ... |
+
+---
+
+# Key Angles
+
+<div style="margin: 1rem 0; font-size: 0.95rem;">
+
+| θ (degrees) | θ (radians) | sin θ | cos θ |
+|:---:|:---:|:---:|:---:|
+| 0° | 0 | 0 | 1 |
+| 30° | π/6 | 1/2 | √3/2 |
+| 45° | π/4 | √2/2 | √2/2 |
+| 60° | π/3 | √3/2 | 1/2 |
+| 90° | π/2 | 1 | 0 |
+| 180° | π | 0 | −1 |
+| 270° | 3π/2 | −1 | 0 |
+| 360° | 2π | 0 | 1 |
+
+</div>
+
+<DiscoveryPrompt
+  question="Do you notice a relationship between sin θ and cos θ at complementary angles (angles that add to 90°)?"
+  hint="sin 30° = cos 60° = 1/2 and sin 60° = cos 30° = √3/2. In general, sin θ = cos(90° − θ). This is the cofunction identity!"
+/>
+
+---
+
+# Coming Up Next
+
+<div style="margin: 1rem 0;">
+
+Now that you understand how the unit circle generates sine and cosine waves, we'll explore:
+
+- **Amplitude and period** — What happens when we stretch or compress?
+- **Phase shifts** — How does *f*(θ) = sin(θ − c) move the wave?
+- **Transformations** — Building *f*(θ) = A sin(Bθ − C) + D
+
+</div>
+
+<div style="margin-top: 2rem; padding: 16px 20px; background: var(--bg-surface, #161b22); border-radius: 10px; border: 1px solid var(--border-subtle);">
+  <span style="color: var(--text-secondary, #8b949e); font-size: 0.9rem;">
+    💡 Go back to the interactive and experiment! Try toggling cosine on, or watch the auto-play animation to build your intuition.
+  </span>
+</div>
