@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "slidev --open",
-    "build": "slidev build --base /KirkAmosPrecalc/",
-    "preview": "slidev build && npx -y serve dist"
+    "dev": "slidev curriculum/ch04-trigonometry/4.2-unit-circle.md --open",
+    "build": "node build.mjs",
+    "preview": "npm run build && npx -y serve dist"
   },
   "devDependencies": {
     "@slidev/cli": "^52.15.2",
